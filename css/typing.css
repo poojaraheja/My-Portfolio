@@ -1,0 +1,78 @@
+.typing{
+    display: flex;
+}
+
+.typing .text{
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.typing .options{
+    margin-left: 10px;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+}
+
+.options li{
+    list-style-type: none;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    top: 0;
+    animation: slide 9s steps(3) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -132px;
+    }
+}
+
+.options li span strong{
+    position: relative;
+    margin: 5px 0;
+    line-height: 45px;
+    color: #FFB533;
+}
+
+.options li span:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 43px;
+    border-left: 2px solid white;
+    animation: typing 3s steps(15) infinite;
+    background-color: #0A0A1A;
+}
+
+@keyframes typing {
+    40%, 60%{
+        left: calc(100% + 10px);
+    }
+
+    100%{
+        left: 0;
+    }
+}
+
+@media(max-width: 800px){
+    .typing .options{
+        height: 35px;
+        line-height: 35px;
+    }
+    .options li{
+        font-size: 23px;
+    }
+    .options li span{
+        line-height: 38px;
+    }
+    @keyframes slide {
+        100%{
+            top: -115px;
+        }
+    }
+}
